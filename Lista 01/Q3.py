@@ -3,17 +3,17 @@ class Conta:
         self.nome = ""
         self.num = 0
         self.saldo = 0
+
                 
-    def deposito(self, x):
-        x = int(input("Valor do depósito: "))
-        return self.saldo + x
+    def deposito(self, y):
+        return self.saldo + y
     
-    def saque(self, x):
-        x = int(input("Valor do saque: "))
-        return self.saldo - x
+    def saque(self, y):
+        return self.saldo - y
     
 x = Conta()
 x.nome = input("Titular da conta: ")
 x.num = int(input("Número da conta: "))
 x.saldo = int(input("Saldo da conta: "))
-print(f"Saque: {Conta.saque(x)}\nDeposito: {Conta.deposito(x)}")
+y = int(input("Digite o valor para depositar/sacar: "))
+print(f"Saque: {x.saque(y)}\nDeposito: {x.deposito(y)}")
