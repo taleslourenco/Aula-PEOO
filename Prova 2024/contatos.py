@@ -100,7 +100,7 @@ class UI:
     def main():
         op = 0
         while op != 6:
-            op == UI.menu()
+            op = UI.menu()
             if op == 1: UI.inserir()
             if op == 2: UI.listar()
             if op == 3: UI.atualizar()
