@@ -1,5 +1,6 @@
 import json
-from datetime import datetime
+from datetime import datetime, date, timedelta
+
 
 class Contato:
     def __init__(self, id, nome, email, nasc):
@@ -43,18 +44,18 @@ class Contatos:
         return None
     
     @classmethod
-    def aniversariantes(cls, obj):
+    def aniversariantes(cls):
         cls.abrir()
         aniversariantes = []
         for c in cls.contatos:
-            if c.nasc.month == obj:
-                aniversariantes.append(c)
-            else:
-                pass
-        if len(aniversariantes) != 0:
-            pass
-        else: 
-            aniversariantes.append("Não há aniversariantes no mês")
+            start_date = datetime(1, 1, 1)
+            end_date = datetime(1, 12, 31)
+            delta = timedelta(days=1)
+            while start_date <= end_date:
+                while c.nasc.day == start_date.month:
+                    while c.nasc.day == start_date.day:
+                        aniversariantes.append(c)
+                        start_date += delta
         return aniversariantes
     
     @classmethod
@@ -141,9 +142,7 @@ class UI:
 
     @staticmethod
     def aniversariantes():
-        mes = int(input("Mês dos aniversariantes: "))
-        a = Contatos.aniversariantes(Contatos, mes)
-        for x in a:
-            print(x)
+        for c in Contatos.aniversariantes():
+            print(c)
 
 UI.main()
