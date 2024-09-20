@@ -65,6 +65,7 @@ class UI:
         UI.veiculo_listar()
         id = int(input("Informe o ID do veículo que deseja atualizar: "))
         nome = input("Informe o novo nome: ")
+        UI.fabricante_listar()
         id_fabricante = int(input("Informe o ID do fabricante: "))
         view.veiculo_atualizar(id, nome, id_fabricante)
 
@@ -85,7 +86,7 @@ class UI:
         cor = input("Informe a cor: ")
         UI.veiculo_listar
         id_veiculo = int(input("Informe o ID do veiculo: "))
-        view.modelo_inserir(nome, id_veiculo)
+        view.modelo_inserir(nome, id_veiculo, cor)
 
     @staticmethod
     def modelo_listar():  
