@@ -1,5 +1,5 @@
 import streamlit as st
-from retanguloUI import RetanguloUI
+from RetanguloUI import RetanguloUI
 
 RetanguloUI.main()
 

@@ -1,5 +1,5 @@
 import streamlit as st
-from retangulo import Retangulo
+from Retangulo import Retangulo
 
 class RetanguloUI:
     def main():
