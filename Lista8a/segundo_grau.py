@@ -13,6 +13,6 @@ class Bhaskara:
         return self.__b ** 2 - 4 * self.__a * self.__c
     
     def calc_raizes(self):
-        x1 = ((self.__b * -1) + math.sqrt(Bhaskara.calc_delta())) / (2*self.__a)
-        x2 = ((self.__b * -1) - math.sqrt(Bhaskara.calc_delta())) / (2*self.__a)
+        x1 = ((self.__b * -1) + math.sqrt(self.calc_delta())) / (2*self.__a)
+        x2 = ((self.__b * -1) - math.sqrt(self.calc_delta())) / (2*self.__a)
         return x1, x2
