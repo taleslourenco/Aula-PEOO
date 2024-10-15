@@ -11,6 +11,6 @@ class segundograuUI:
         if st.button("Calcular"):
             b = Bhaskara(float(a), float(b), float(c))
             st.write(b)
-            st.write(f"Delta = {b.calc_delta}")
-            st.write(f"Raizes (x1, x2) = {b.calc_raizes}")
+            st.write(f"Delta = {b.calc_delta()}")
+            st.write(f"Raizes (x1, x2) = {b.calc_raizes()}")
         
