@@ -14,6 +14,6 @@ class Bhaskara:
         return delta
     
     def calc_raizes(self):
-        x1 = ((self.__b * -1) + math.sqrt()) / (2*self.__a)
-        x2 = ((self.__b * -1) - math.sqrt()) / (2*self.__a)
+        x1 = ((self.__b * -1) + math.sqrt(Bhaskara.calc_delta())) / (2*self.__a)
+        x2 = ((self.__b * -1) - math.sqrt(Bhaskara.calc_delta())) / (2*self.__a)
         return x1, x2
