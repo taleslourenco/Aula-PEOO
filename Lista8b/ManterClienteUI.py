@@ -1,5 +1,6 @@
 import streamlit as st
 import View
+import pandas as pd
 
 class ClienteUI:
     def main():
@@ -15,7 +16,12 @@ class ClienteUI:
             ClienteUI.Excluir()
 
     def Listar():
-        df = 
+        data = {
+        'ID': [1, 2, 3],
+        'Nome': ['Alice', 'Bob', 'Charlie'],
+        'Email': ['alice@example.com', 'bob@example.com', 'charlie@example.com'],
+        'Fone': ['(11) 99999-0001', '(11) 88888-0002', '(11) 77777-0003']}
+        pd.DataFrame(data)
 
     def Inserir():
         nome = st.text_input("Informe o nome")
