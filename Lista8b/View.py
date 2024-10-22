@@ -13,5 +13,5 @@ def cliente_atualizar(id, nome, email, fone):
     Clientes.atualizar(c)
 
 def cliente_excluir(id):
-    c = Cliente(id)
+    c = Cliente(id, "", "", "")
     Clientes.excluir(c)

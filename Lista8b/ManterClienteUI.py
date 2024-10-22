@@ -28,7 +28,10 @@ class ClienteUI:
             View.cliente_inserir(nome, email, fone)
 
     def Atualizar():
-        id = st.selectbox("Atualização de Clientes", View.cliente_listar())
+        clientes = View.cliente_listar()
+        
+
+        id = st.selectbox("Atualização de Clientes", View.cliente_listar(), index = 0)
         nome = st.text_input("Informe o novo nome")
         email = st.text_input("Informe o novo e-mail")
         fone = st.text_input("Informe o novo fone")
@@ -37,6 +40,6 @@ class ClienteUI:
             View.cliente_atualizar(id, nome, email, fone)
     
     def Excluir():
-        id = st.selectbox("Exclusão de Clientes", View.cliente_listar())
+        id = st.selectbox("Exclusão de Clientes", View.cliente_listar(), index = 0)
         if st.button("Excluir"):
             View.cliente_excluir(id)
