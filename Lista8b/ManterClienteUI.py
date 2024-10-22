@@ -21,7 +21,8 @@ class ClienteUI:
         'Nome': ['Alice', 'Bob', 'Charlie'],
         'Email': ['alice@example.com', 'bob@example.com', 'charlie@example.com'],
         'Fone': ['(11) 99999-0001', '(11) 88888-0002', '(11) 77777-0003']}
-        pd.DataFrame(data)
+        df = pd.DataFrame(data)
+        st.table(df)
 
     def Inserir():
         nome = st.text_input("Informe o nome")
