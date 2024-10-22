@@ -32,20 +32,13 @@ class ClienteUI:
 
     @staticmethod
     def Atualizar():
-        clientes = View.cliente_listar()  
-
-        opcoes = [f"{cliente[0]} - {cliente[1]}" for cliente in clientes]
-
-        cliente_selecionado = st.selectbox("Atualização de Clientes", opcoes)
-
-        id_selecionado = cliente_selecionado.split(' - ')[0]
-
+        id = st.selectbox("Atualização de Clientes", View.cliente_listar())
         nome = st.text_input("Informe o novo nome")
         email = st.text_input("Informe o novo e-mail")
         fone = st.text_input("Informe o novo fone")
 
         if st.button("Atualizar"):
-            View.cliente_atualizar(id_selecionado, nome, email, fone)
+            View.cliente_atualizar(id, nome, email, fone)
     
     @staticmethod
     def Excluir():
