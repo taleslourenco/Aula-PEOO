@@ -15,8 +15,9 @@ class ClienteUI:
             ClienteUI.Excluir()
 
     def Listar():
-            df = [{"ID": c.id, "Nome": c.nome, "Email": c.email, "Telefone": c.telefone} for c in clientes]
-            st.dataframe(df)
+        clientes = View.cliente_listar()
+        df = [{"ID": c.id, "Nome": c.nome, "Email": c.email, "Fone": c.fone} for c in clientes]
+        st.dataframe(df)  
     
     def Inserir():
         nome = st.text_input("Informe o nome")
