@@ -1,6 +1,5 @@
 import streamlit as st
 import View
-import CRUD
 
 class ClienteUI:
     @staticmethod
@@ -33,19 +32,14 @@ class ClienteUI:
 
     @staticmethod
     def Atualizar():
-        clientes = View.cliente_listar()
-        ids = [c.id for c in clientes]
+        st.selectbox("Atualização de Clientes", View.cliente_listar())
+        ids = {c.id for c in View.cliente_listar}
+        nome = st.text_input("Informe o novo nome")
+        email = st.text_input("Informe o novo e-mail")
+        fone = st.text_input("Informe o novo fone")
 
-    
-        id = st.selectbox("Selecione o ID do cliente", ids, key="atualizar_cliente_id")
-        cliente = CRUD.listar_id(id)
-
-        nome = st.text_input("Nome", cliente.nome, key="atualizar_nome")
-        email = st.text_input("Email", cliente.email, key="atualizar_email")
-        fone = st.text_input("Telefone", cliente.fone, key="atualizar_fone")
-
-        if st.button("Atualizar", key="btn_atualizar"):
-         View.cliente_atualizar(nome, email, fone)
+        if st.button("Atualizar"):
+            View.cliente_atualizar(ids, nome, email, fone)
     
     @staticmethod
     def Excluir():
