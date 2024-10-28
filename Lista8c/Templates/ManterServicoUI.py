@@ -35,9 +35,9 @@ class ManterServicoUI:
             st.write("Nenhum serviço cadastrado")
         else:
             op = st.selectbox("Atualização de serviços", servicos)
-            descricao = st.text_input("Informe o novo nome do cliente", op.descricao)
-            valor = st.text_input("Informe o novo e-mail", op.valor)
-            duracao = st.text_input("Informe o novo fone", op.duracao)
+            descricao = st.text_input("Informe a nova descrição", op.descricao)
+            valor = st.text_input("Informe o novo valor", op.valor)
+            duracao = st.text_input("Informe a nova duração", op.duracao)
             if st.button("Atualizar"):
                 View.servico_atualizar(op.id, descricao, valor, duracao)
                 st.rerun()

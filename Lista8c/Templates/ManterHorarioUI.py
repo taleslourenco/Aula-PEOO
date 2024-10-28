@@ -4,7 +4,7 @@ from View import View
 
 class ManterHorarioUI:
     def main():
-        st.header("Cadastro de Horarios")
+        st.header("Cadastro de Horários")
         tab1, tab2, tab3, tab4 = st.tabs(["Listar", "Inserir", "Atualizar", "Excluir"])
         with tab1: ManterHorarioUI.listar()
         with tab2: ManterHorarioUI.inserir()
@@ -14,7 +14,7 @@ class ManterHorarioUI:
     def listar():
         horarios = View.horario_listar()
         if len(horarios) == 0:
-            st.write("Nenhum horario cadastrado")
+            st.write("Nenhum horário cadastrado")
         else:
             dic = []
             for obj in horarios: dic.append(obj.__dict__)
@@ -33,13 +33,13 @@ class ManterHorarioUI:
     def atualizar():
         horarios = View.horario_listar()
         if len(horarios) == 0:
-            st.write("Nenhum cliente cadastrado")
+            st.write("Nenhum horário cadastrado")
         else:
-            op = st.selectbox("Atualização de horarios", horarios)
-            data = st.text_input("Informe o novo nome do cliente", op.nome)
+            op = st.selectbox("Atualização de horários", horarios)
+            data = st.text_input("Informe a nova data", op.data)
             confirmado = st.button("Confirmado")
-            id_cliente = st.text_input("Informe o novo e-mail", op.email)
-            id_servico = st.text_input("Informe o novo fone", op.fone)
+            id_cliente = st.text_input("Informe o novo ID do cliente", op.id_cliente)
+            id_servico = st.text_input("Informe o novo ID do serviço", op.id_servico)
             if st.button("Atualizar"):
                 View.horario_atualizar(op.id, data, confirmado, id_cliente, id_servico)
                 st.rerun()
@@ -47,9 +47,9 @@ class ManterHorarioUI:
     def excluir():
         horarios = View.horario_listar()
         if len(horarios) == 0:
-            st.write("Nenhum horario cadastrado")
+            st.write("Nenhum horário cadastrado")
         else:
-            op = st.selectbox("Exclusão de horarios", horarios)
+            op = st.selectbox("Exclusão de horários", horarios)
             if st.button("Excluir"):
                 View.horario_excluir(op.id)
                 st.rerun()
