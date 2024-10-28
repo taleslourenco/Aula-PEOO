@@ -1,0 +1,2 @@
+class IndexUI:
+    def main():
