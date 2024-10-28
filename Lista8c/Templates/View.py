@@ -1,4 +1,4 @@
-from Modelos.Classes import Cliente, Horario, Servico, Clientes, Horarios, Servicos
+from Modelos.Classe import Cliente, Horario, Servico, Clientes, Horarios, Servicos
 
 class View:
     def cliente_inserir(nome, email, fone):
