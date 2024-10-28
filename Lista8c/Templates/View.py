@@ -32,8 +32,8 @@ class View:
         Horarios.excluir(obj)
         
     def servico_inserir(descricao, valor, duracao):
-        obj = Cliente(0, descricao, valor, duracao)
-        Clientes.inserir(obj)
+        obj = Servico(0, descricao, valor, duracao)
+        Servicos.inserir(obj)
       
     def servico_listar():
       return Servicos.listar()
