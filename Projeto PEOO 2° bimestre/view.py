@@ -16,7 +16,6 @@ def fabricante_excluir(id):
     Fabricantes.excluir(c)
 
 
-
 def veiculo_inserir(nome, id_fabricante):
     c = Veiculo(0, nome, id_fabricante)
     Veiculos.inserir(c)
