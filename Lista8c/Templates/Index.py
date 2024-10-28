@@ -12,6 +12,4 @@ class IndexUI:
         if opcao("Cadastro de Serviços"):
             ManterServicoUI.ManterServicoUI.main()
         
-        
-        
 IndexUI.main()
