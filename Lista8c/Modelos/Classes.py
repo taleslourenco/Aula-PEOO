@@ -11,12 +11,12 @@ class Cliente:
     return f"{self.id} | {self.nome} | {self.email} | {self.fone}"
   
 class Horario:
-    def __init__(self, id, data, id_cliente, id_servico):
+    def __init__(self, id, data):
       self.id = id
       self.data = data
       self.confirmado = False
-      self.id_cliente = id_cliente
-      self.id_servico = id_servico
+      self.id_cliente = 0
+      self.id_servico = 0
     def __str__(self):
       return f"{self.id} | {self.data.strftime('%d/%m/%Y %H:%M')}"
     def to_json(self):
@@ -123,9 +123,6 @@ class Horarios:
     c = cls.listar_id(obj.id)
     if c != None:
        c.data = obj.data
-       c.confirmado = obj.confirmado
-       c.id_cliente = obj.id_cliente
-       c.id_servico = obj.id_servico
     cls.salvar()   
   
   @classmethod

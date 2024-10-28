@@ -16,19 +16,19 @@ class View:
         obj = Cliente(id, "", "", "")
         Clientes.excluir(obj)
 
-    def horario_inserir(data, confirmado, id_cliente, id_servico):
-        obj = Horario(0, data, confirmado, id_cliente, id_servico)
+    def horario_inserir(data):
+        obj = Horario(0, data)
         Horarios.inserir(obj)
       
     def horario_listar():
       return Horarios.listar()
 
-    def horario_atualizar(id, data, confirmado, id_cliente, id_servico):
-        obj = Horario(id, data, confirmado, id_cliente, id_servico)
+    def horario_atualizar(id, data):
+        obj = Horario(id, data)
         Horarios.atualizar(obj)
 
     def horario_excluir(id):
-        obj = Horario(id, "", "", "", "")
+        obj = Horario(id, "")
         Horarios.excluir(obj)
         
     def servico_inserir(descricao, valor, duracao):

@@ -23,11 +23,8 @@ class ManterHorarioUI:
 
     def inserir():
         data = st.text_input("Informe a data da consulta")
-        confirmado = st.button("Confirmar")
-        id_cliente = st.text_input("Informe o ID do cliente")
-        id_servico = st.text_input("Informe o ID do serviço")
         if st.button("Inserir"):
-            View.horario_inserir(data, confirmado, id_cliente, id_servico)
+            View.horario_inserir(data)
             st.rerun()
 
     def atualizar():
@@ -37,11 +34,8 @@ class ManterHorarioUI:
         else:
             op = st.selectbox("Atualização de horários", horarios)
             data = st.text_input("Informe a nova data", op.data)
-            confirmado = st.button("Confirmado")
-            id_cliente = st.text_input("Informe o novo ID do cliente", op.id_cliente)
-            id_servico = st.text_input("Informe o novo ID do serviço", op.id_servico)
             if st.button("Atualizar"):
-                View.horario_atualizar(op.id, data, confirmado, id_cliente, id_servico)
+                View.horario_atualizar(op.id, data)
                 st.rerun()
 
     def excluir():
