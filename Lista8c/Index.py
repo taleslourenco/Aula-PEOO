@@ -1,7 +1,7 @@
 import streamlit as st
-from Templates.ManterClienteUI import ManterClienteUI 
-from Templates.ManterHorarioUI import ManterHorarioUI
-from Templates.ManterServicoUI import ManterServicoUI
+from Lista8c.Templates.manterClienteUI import ManterClienteUI 
+from Lista8c.Templates.manterHorarioUI import ManterHorarioUI
+from Lista8c.Templates.manterServicoUI import ManterServicoUI
 
 class IndexUI:
     def main():
