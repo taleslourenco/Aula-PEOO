@@ -1,4 +1,4 @@
-from Lista8c.Models.classe import Cliente, Horario, Servico, Clientes, Horarios, Servicos
+from Models.classe import Cliente, Horario, Servico, Clientes, Horarios, Servicos
 
 class View:
     def cliente_inserir(nome, email, fone):
