@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-from View import View
+from Lista8c.View import View
 
 class ManterClienteUI:
     def main():
