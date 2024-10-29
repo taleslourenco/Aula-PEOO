@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-from Lista8d.View import View
+from View import View
 
 class ManterHorarioUI:
     def main():

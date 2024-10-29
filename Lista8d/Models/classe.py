@@ -2,14 +2,13 @@ import json
 from datetime import datetime
 
 class Cliente:
-  def __init__(self, id, nome, email, fone, senha):
+  def __init__(self, id, nome, email, fone):
     self.id = id
     self.nome = nome
     self.email = email
-    self.fone = fone
-    self.senha = senha
+    self.fone = fone 
   def __str__(self):
-    return f"{self.id} | {self.nome} | {self.email} | {self.fone} | {self.senha}"
+    return f"{self.id} | {self.nome} | {self.email} | {self.fone}"
   
 class Horario:
     def __init__(self, id, data):
@@ -20,7 +19,6 @@ class Horario:
       self.id_servico = 0
     def __str__(self):
       return f"{self.id} | {self.data.strftime('%d/%m/%Y %H:%M')}"
-    
     def to_json(self):
       dic = {}
       dic["id"] = self.id
@@ -70,7 +68,6 @@ class Clientes:
       c.nome = obj.nome
       c.email = obj.email
       c.fone = obj.fone
-      c.senha = obj.senha
     cls.salvar()   
   
   @classmethod
@@ -92,7 +89,7 @@ class Clientes:
       with open("clientes.json", mode = "r") as arquivo:  
         texto = json.load(arquivo)
         for obj in texto:
-          c = Cliente(obj["id"], obj["nome"], obj["email"], obj["fone"], obj["senha"])                     
+          c = Cliente(obj["id"], obj["nome"], obj["email"], obj["fone"])                     
           cls.clientes.append(c)
     except FileNotFoundError:
       pass

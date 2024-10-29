@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-from Lista8d.View import View
+from View import View
 
 class ManterClienteUI:
     def main():
@@ -25,9 +25,8 @@ class ManterClienteUI:
         nome = st.text_input("Informe o nome do cliente")
         email = st.text_input("Informe o e-mail")
         fone = st.text_input("Informe o fone")
-        senha = st.text_input("Informe o fone")
         if st.button("Inserir"):
-            View.cliente_inserir(nome, email, fone, senha)
+            View.cliente_inserir(nome, email, fone)
             st.rerun()
 
     def atualizar():
@@ -39,9 +38,8 @@ class ManterClienteUI:
             nome = st.text_input("Informe o novo nome do cliente", op.nome)
             email = st.text_input("Informe o novo e-mail", op.email)
             fone = st.text_input("Informe o novo fone", op.fone)
-            senha = st.text_input("Informe o novo fone", op.senha)
             if st.button("Atualizar"):
-                View.cliente_atualizar(op.id, nome, email, fone, senha)
+                View.cliente_atualizar(op.id, nome, email, fone)
                 st.rerun()
 
     def excluir():

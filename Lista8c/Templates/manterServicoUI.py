@@ -26,7 +26,7 @@ class ManterServicoUI:
         valor = st.text_input("Informe o valor")
         duracao = st.text_input("Informe a duração")
         if st.button("Inserir"):
-            View.horario_inserir(descricao, valor, duracao)
+            View.servico_inserir(descricao, valor, duracao)
             st.rerun()
 
     def atualizar():
