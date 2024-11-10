@@ -19,7 +19,7 @@ class ManterClienteUI:
         else:    
             #for obj in clientes: st.write(obj)
             dic = []
-            for obj in clientes: dic.append(obj.__dict__)
+            for obj in len(clientes, 4) : dic.append(obj.__dict__)
             df = pd.DataFrame(dic)
             st.dataframe(df)
 
