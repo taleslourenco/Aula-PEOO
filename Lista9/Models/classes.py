@@ -3,14 +3,15 @@ from datetime import datetime
 
 # Modelo
 class Cliente:
-  def __init__(self, id, nome, email, fone, senha):
+  def __init__(self, id, nome, email, fone, senha, confsenha):
     self.id = id
     self.nome = nome
     self.email = email
     self.fone = fone
     self.senha = senha
+    self.confsenha = confsenha
   def __str__(self):
-    return f"{self.nome} - {self.email} - {self.fone}"
+    return f"{self.nome} | {self.email} | {self.fone}"
 
 class Servico:
   def __init__(self, id, descricao, valor, duracao):
@@ -19,7 +20,7 @@ class Servico:
     self.valor = valor
     self.duracao = duracao
   def __str__(self):
-    return f"{self.id} - {self.descricao} - R$ {self.valor:.2f} - {self.duracao} min"
+    return f"{self.id} | {self.descricao} | R$ {self.valor:.2f} | {self.duracao} min"
 
 class Horario:
     def __init__(self, id, data):
@@ -29,7 +30,7 @@ class Horario:
         self.id_cliente = 0
         self.id_servico = 0
     def __str__(self):
-        return f"{self.id} - {self.data}"
+        return f"{self.id} | {self.data}"
     def to_json(self):
       dic = {}
       dic["id"] = self.id
@@ -41,7 +42,7 @@ class Horario:
     
 # Persistência
 class Clientes:
-  objetos = []    # atributo estático
+  objetos = [] 
 
   @classmethod
   def inserir(cls, obj):
@@ -68,6 +69,7 @@ class Clientes:
       c.email = obj.email
       c.fone = obj.fone
       c.senha = obj.senha
+      c.confsenha = obj.confsenha
       cls.salvar()
 
   @classmethod
@@ -95,7 +97,7 @@ class Clientes:
       with open("clientes.json", mode="r") as arquivo:   # r - read
         texto = json.load(arquivo)
         for obj in texto:   
-          c = Cliente(obj["id"], obj["nome"], obj["email"], obj["fone"], obj["senha"])
+          c = Cliente(obj["id"], obj["nome"], obj["email"], obj["fone"], obj["senha"], obj["confsenha"])
           cls.objetos.append(c)
     except FileNotFoundError:
       pass
@@ -158,7 +160,7 @@ class Servicos:
       pass
 
 class Horarios:
-  objetos = []    # atributo estático
+  objetos = []    
 
   @classmethod
   def inserir(cls, obj):

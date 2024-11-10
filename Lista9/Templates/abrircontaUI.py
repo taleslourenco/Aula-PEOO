@@ -13,8 +13,12 @@ class AbrirContaUI:
         email = st.text_input("Informe o e-mail")
         fone = st.text_input("Informe o fone")
         senha = st.text_input("Informe a senha", type="password")
+        confsenha = st.text_input("Confirme a senha", type="password")
         if st.button("Inserir"):
-            View.cliente_inserir(nome, email, fone, senha)
-            st.success("Conta criada com sucesso")
-            time.sleep(2)
-            st.rerun()
+            if confsenha == senha:
+                View.cliente_inserir(nome, email, fone, senha, confsenha)
+                st.success("Conta criada com sucesso")
+                time.sleep(2)
+                st.rerun()
+            else:
+                st.write("Senhas não batem")
