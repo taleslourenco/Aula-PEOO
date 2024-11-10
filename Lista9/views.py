@@ -1,4 +1,4 @@
-from Models.classes import Cliente, Clientes, Horario, Horarios, Servico, Servicos
+from Models.class import 
 from datetime import datetime, timedelta
 
 class View:
