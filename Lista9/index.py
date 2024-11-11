@@ -4,6 +4,7 @@ from Templates.manterservicoUI import ManterServicoUI
 from Templates.abriragendaUI import AbrirAgendaUI
 from Templates.abrircontaUI import AbrirContaUI
 from Templates.listarhorarioUI import ListarHorarioUI
+from Templates.perfilusuarioUI import perfilusuarioUI
 from Templates.loginUI import LoginUI
 from views import View
 
@@ -16,15 +17,17 @@ class IndexUI:
         if op == "Abrir Conta": AbrirContaUI.main()
                
     def menu_admin():            
-        op = st.sidebar.selectbox("Menu", ["Cadastro de Clientes", "Cadastro de Horários", "Cadastro de Serviços", "Abrir Agenda do Dia"])
+        op = st.sidebar.selectbox("Menu", ["Cadastro de Clientes", "Cadastro de Horários", "Cadastro de Serviços", "Abrir Agenda do Dia", "Perfil do Usuário"])
         if op == "Cadastro de Clientes": ManterClienteUI.main()
         if op == "Cadastro de Horários": ManterHorarioUI.main()
         if op == "Cadastro de Serviços": ManterServicoUI.main()
         if op == "Abrir Agenda do Dia": AbrirAgendaUI.main()
+        if op == "Perfil do Usuário": perfilusuarioUI.main()
 
     def menu_cliente():
-        op = st.sidebar.selectbox("Menu", ["Horários Disponíveis"])
+        op = st.sidebar.selectbox("Menu", ["Horários Disponíveis", "Perfil do Usuário"])
         if op == "Horários Disponíveis": ListarHorarioUI.main()
+        if op == "Perfil do Usuário": perfilusuarioUI.main()
 
     def sair_do_sistema():
         if st.sidebar.button("Sair"):
