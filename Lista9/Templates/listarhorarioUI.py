@@ -15,4 +15,6 @@ class ListarHorarioUI:
             dic = []
             for obj in horarios: dic.append(obj.to_json())
             df = pd.DataFrame(dic)
+            
             st.dataframe(df)
+            

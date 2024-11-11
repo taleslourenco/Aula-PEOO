@@ -22,7 +22,7 @@ class View:
         Clientes.atualizar(c)
 
     def cliente_excluir(id):
-        c = Cliente(id, "", "", "", "")
+        c = Cliente(id, "", "", "", "", "")
         Clientes.excluir(c)    
 
     def cliente_autenticar(email, senha):
@@ -60,10 +60,6 @@ class View:
         Horarios.excluir(c)    
 
     def horario_abrir_agenda(data, hora_inicio, hora_fim, intervalo):
-        #data = "05/11/2024"
-        #inicio = "08:00"
-        #fim = "12:00"
-        #intervalo = 60
         i = data + " " + hora_inicio   # "05/11/2024 08:00"
         f = data + " " + hora_fim      # "05/11/2024 12:00"
         d = timedelta(minutes=intervalo)

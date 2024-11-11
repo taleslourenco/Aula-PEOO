@@ -17,19 +17,22 @@ class ManterClienteUI:
         if len(clientes) == 0: 
             st.write("Nenhum cliente cadastrado")
         else:    
-            #for obj in clientes: st.write(obj)
             dic = []
-            for obj in clientes: dic.append(obj.__dict__)
+            for obj in clientes: 
+                dic.append(obj.__dict__)  
             df = pd.DataFrame(dic)
-            st.dataframe(df, index=["id", "nome", "email", "fone"])
+            df_limited = df.iloc[:, :4]
+            st.dataframe(df_limited)
+            
 
     def inserir():
         nome = st.text_input("Informe o nome do cliente")
         email = st.text_input("Informe o e-mail")
         fone = st.text_input("Informe o fone")
         senha = st.text_input("Informe a senha", type="password")
+        confsenha = st.text_input("Confirme a senha", type="password")
         if st.button("Inserir"):
-            View.cliente_inserir(nome, email, fone, senha)
+            View.cliente_inserir(nome, email, fone, senha, confsenha)
             st.success("Cliente inserido com sucesso")
             time.sleep(2)
             st.rerun()
@@ -44,8 +47,9 @@ class ManterClienteUI:
             email = st.text_input("Informe o novo e-mail", op.email)
             fone = st.text_input("Informe o novo fone", op.fone)
             senha = st.text_input("Informe a nova senha", op.senha, type="password")
+            confsenha = st.text_input("Confirme a nova senha", type="password")
             if st.button("Atualizar"):
-                View.cliente_atualizar(op.id, nome, email, fone, senha)
+                View.cliente_atualizar(op.id, nome, email, fone, senha, confsenha)
                 st.success("Cliente atualizado com sucesso")
                 time.sleep(2)
                 st.rerun()
