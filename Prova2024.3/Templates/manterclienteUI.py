@@ -37,7 +37,7 @@ class ManterClienteUI:
         if st.button("Inserir"):
             id_perfil = None
             if perfil != None: id_perfil = perfil.id
-            View.hcliente_inserir(nome, email, fone, senha, id_perfil)
+            View.cliente_inserir(nome, email, fone, senha, id_perfil)
             st.success("Cliente inserido com sucesso")
             time.sleep(2)
             st.rerun()
@@ -53,7 +53,7 @@ class ManterClienteUI:
             email = st.text_input("Informe o novo e-mail", op.email)
             fone = st.text_input("Informe o novo fone", op.fone)
             senha = st.text_input("Informe a nova senha", op.senha, type="password")
-            id_perfil = None if op.id_cliente in [0, None] else op.id_perfil
+            id_perfil = None if op.id_perfil in [0, None] else op.id_perfil
             perfil = st.selectbox("Informe o novo cliente", perfis, next((i for i, c in enumerate(perfis) if c.id == id_perfil), None))
             if st.button("Atualizar"):
                 id_perfil = None

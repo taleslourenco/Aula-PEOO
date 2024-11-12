@@ -28,23 +28,23 @@ class ManterPerfilUI:
         descricao = st.text_input("Informe a descrição do perfil")
         beneficios = st.text_input("Informe os beneficios do perfil")
         if st.button("Inserir"):
-            View.cliente_inserir(nome, descricao, beneficios)
-            st.success("Cliente inserido com sucesso")
+            View.perfil_inserir(nome, descricao, beneficios)
+            st.success("Perfil inserido com sucesso")
             time.sleep(2)
             st.rerun()
 
     def atualizar():
-        perfis = View.cliente_listar()
+        perfis = View.perfil_listar()
         if len(perfis) == 0: 
             st.write("Nenhum perfil cadastrado")
         else:
             op = st.selectbox("Atualização do perfil", perfis)
             nome = st.text_input("Informe o novo nome do cliente", op.nome)
-            descricao = st.text_input("Informe o novo e-mail", op.descricao)
-            beneficios = st.text_input("Informe o novo fone", op.beneficios)
+            descricao = st.text_input("Informe a nova descrição", op.descricao)
+            beneficios = st.text_input("Informe o novo benefício", op.beneficios)
             if st.button("Atualizar"):
-                View.cliente_atualizar(op.id, nome, descricao, beneficios)
-                st.success("beneficios atualizado com sucesso")
+                View.perfil_atualizar(op.id, nome, descricao, beneficios)
+                st.success("Perfil atualizado com sucesso")
                 time.sleep(2)
                 st.rerun()
 

@@ -1,11 +1,11 @@
 import json
 
 class Perfil:
-  def __init__(self, id, n, d, b):
+  def __init__(self, id, nome, descricao, beneficios):
     self.id = id
-    self.nome = n
-    self.descricao = d
-    self.beneficios = b
+    self.nome = nome
+    self.descricao = descricao
+    self.beneficios = beneficios
   def __str__(self):
     return f"{self.nome} | {self.descricao} | {self.beneficios}"
 

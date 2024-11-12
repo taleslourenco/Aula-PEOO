@@ -8,7 +8,7 @@ class View:
     def cliente_admin():
         for c in View.cliente_listar():
             if c.email == "admin": return
-        View.cliente_inserir("admin", "admin", "1234", "1234")
+        View.cliente_inserir("admin", "admin", "1234", "1234", "0")
 
     def cliente_inserir(nome, email, fone, senha, id_perfil):
         c = Cliente(0, nome, email, fone, senha, id_perfil)
@@ -21,11 +21,12 @@ class View:
         return Clientes.listar_id(id)    
 
     def cliente_atualizar(id, nome, email, fone, senha, id_perfil):
-        c = Cliente(id, nome, email, fone, senha, id_perfil)
+        c = Cliente(id, nome, email, fone, senha)
+        c.id_perfil = id_perfil
         Clientes.atualizar(c)
 
     def cliente_excluir(id):
-        c = Cliente(id, "", "", "", "", "")
+        c = Cliente(id, None)
         Clientes.excluir(c)    
 
     def cliente_autenticar(email, senha):

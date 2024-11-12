@@ -1,16 +1,23 @@
 import json
 
 class Cliente:
-  def __init__(self, id, nome, email, fone, senha):
+  def __init__(self, id, nome, email, fone, senha, id_perfil):
     self.id = id
     self.nome = nome
     self.email = email
     self.fone = fone
     self.senha = senha
-    self.idPerfil = 0
+    self.id_perfil = id_perfil
   def __str__(self):
     return f"{self.nome} | {self.email} | {self.fone}"
-
+  def to_json(self):
+      dic = {}
+      dic["id"] = self.id
+      dic["nome"] = self.nome
+      dic["email"] = self.email
+      dic["fone"] = self.fone
+      dic["senha"] = self.senha
+      dic["id_perfil"] = self.id_perfil
 
 class Clientes:
   objetos = [] 
@@ -40,7 +47,7 @@ class Clientes:
       c.email = obj.email
       c.fone = obj.fone
       c.senha = obj.senha
-      c.confsenha = obj.confsenha
+      c.id_perfil = obj.id_perfil
       cls.salvar()
 
   @classmethod
@@ -68,7 +75,7 @@ class Clientes:
       with open("clientes.json", mode="r") as arquivo:   # r - read
         texto = json.load(arquivo)
         for obj in texto:   
-          c = Cliente(obj["id"], obj["nome"], obj["email"], obj["fone"], obj["senha"], obj["confsenha"])
+          c = Cliente(obj["id"], obj["nome"], obj["email"], obj["fone"], obj["senha"], obj["id_perfil"])
           cls.objetos.append(c)
     except FileNotFoundError:
       pass
