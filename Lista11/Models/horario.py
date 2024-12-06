@@ -1,5 +1,7 @@
 import json
+from CRUD import CRUD
 from datetime import datetime
+
 
 class Horario:
     def __init__(self, id, data):
@@ -21,7 +23,7 @@ class Horario:
       dic["id_profissional"] = self.id_profissional
       return dic
 
-class Horarios:
+class Horarios(CRUD):
     @classmethod
     def salvar(cls):
         with open("horarios.json", mode="w") as arquivo:  
