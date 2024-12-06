@@ -7,6 +7,7 @@ from Templates.abriragendaUI import AbrirAgendaUI
 from Templates.abrircontaUI import AbrirContaUI
 from Templates.listarhorarioUI import ListarHorarioUI
 from Templates.loginUI import LoginUI
+from Templates.alterardadosUI import AlterarDadosUI
 from views import View
 
 import streamlit as st
@@ -26,9 +27,12 @@ class IndexUI:
         if op == "Cadastro de Serviços": ManterServicoUI.main()
         if op == "Abrir Agenda do Dia": AbrirAgendaUI.main()
 
+
     def menu_cliente():
-        op = st.sidebar.selectbox("Menu", ["Horários Disponíveis"])
+        op = st.sidebar.selectbox("Menu", ["Horários Disponíveis", "Alterar Meus Dados"])
         if op == "Horários Disponíveis": ListarHorarioUI.main()
+        if op == "Alterar Meus Dados": ListarHorarioUI.main()
+
 
     def sair_do_sistema():
         if st.sidebar.button("Sair"):
