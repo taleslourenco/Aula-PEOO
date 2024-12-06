@@ -1,5 +1,5 @@
 import json
-from CRUD import CRUD
+from crud import CRUD
 
 class Servico:
   def __init__(self, id, descricao, valor, duracao):

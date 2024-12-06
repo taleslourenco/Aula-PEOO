@@ -1,5 +1,5 @@
 import json
-from CRUD import CRUD
+from crud import CRUD
 
 class Perfil:
     def __init__(self, id, nome, descricao, beneficios):
@@ -24,7 +24,7 @@ class Perfis(CRUD):
             with open("perfis.json", mode="r") as arquivo:   
                 texto = json.load(arquivo)
                 for obj in texto:   
-                    c = Perfil(obj["id"], obj["nome"], obj["edescricao"], obj["beneficios"])
+                    c = Perfil(obj["id"], obj["nome"], obj["descricao"], obj["beneficios"])
                     cls.objetos.append(c)
         except FileNotFoundError:
             pass

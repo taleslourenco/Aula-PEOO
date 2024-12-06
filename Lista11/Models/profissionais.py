@@ -1,5 +1,5 @@
 import json
-from CRUD import CRUD
+from crud import CRUD
 
 class Profissional:
     def __init__(self, id, nome, especialidade, conselho, email, senha):

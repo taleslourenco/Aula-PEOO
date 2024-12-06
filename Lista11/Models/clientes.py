@@ -1,5 +1,5 @@
 import json
-from CRUD import CRUD
+from crud import CRUD
 
 class Cliente:
     def __init__(self, id, nome, email, fone, senha, id_perfil):

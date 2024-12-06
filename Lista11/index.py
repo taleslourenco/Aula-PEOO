@@ -19,20 +19,24 @@ class IndexUI:
         if op == "Abrir Conta": AbrirContaUI.main()
                
     def menu_admin():            
-        op = st.sidebar.selectbox("Menu", ["Cadastro de Clientes", "Cadastro de Horários", "Cadastro de Perfis", "Cadastro de Profissionais", "Cadastro de Serviços", "Abrir Agenda do Dia"])
+        op = st.sidebar.selectbox("Menu", ["Cadastro de Clientes", "Cadastro de Horários", "Cadastro de Perfis", "Cadastro de Profissionais", "Cadastro de Serviços", "Abrir Agenda do Dia", "Alterar meus Dados"])
         if op == "Cadastro de Clientes": ManterClienteUI.main()
         if op == "Cadastro de Horários": ManterHorarioUI.main()
         if op == "Cadastro de Perfis": ManterPerfilUI.main()
         if op == "Cadastro de Profissionais": ManterProfissionalUI.main()
         if op == "Cadastro de Serviços": ManterServicoUI.main()
         if op == "Abrir Agenda do Dia": AbrirAgendaUI.main()
+        if op == "Alterar meus Dados": AlterarDadosUI.main()
 
+    def menu_profissional():
+        op = st.sidebar.selectbox("Menu", ["Horários Disponíveis", "Alterar meus Dados"])
+        if op == "Horários Disponíveis": ListarHorarioUI.main()
+        if op == "Alterar meus Dados": AlterarDadosUI.main()
 
     def menu_cliente():
-        op = st.sidebar.selectbox("Menu", ["Horários Disponíveis", "Alterar Meus Dados"])
+        op = st.sidebar.selectbox("Menu", ["Horários Disponíveis", "Alterar meus Dados"])
         if op == "Horários Disponíveis": ListarHorarioUI.main()
-        if op == "Alterar Meus Dados": ListarHorarioUI.main()
-
+        if op == "Alterar meus Dados": ListarHorarioUI.main()
 
     def sair_do_sistema():
         if st.sidebar.button("Sair"):

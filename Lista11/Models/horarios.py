@@ -1,7 +1,6 @@
 import json
-from CRUD import CRUD
+from crud import CRUD
 from datetime import datetime
-
 
 class Horario:
     def __init__(self, id, data):
