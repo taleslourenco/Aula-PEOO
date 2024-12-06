@@ -29,8 +29,8 @@ class IndexUI:
         if op == "Alterar meus Dados": AlterarDadosUI.main()
 
     def menu_profissional():
-        op = st.sidebar.selectbox("Menu", ["Horários Disponíveis", "Alterar meus Dados"])
-        if op == "Horários Disponíveis": ListarHorarioUI.main()
+        op = st.sidebar.selectbox("Menu", ["Minha Agenda", "Alterar meus Dados"])
+        if op == "Minha Agenda": ListarHorarioUI.main()
         if op == "Alterar meus Dados": AlterarDadosUI.main()
 
     def menu_cliente():
